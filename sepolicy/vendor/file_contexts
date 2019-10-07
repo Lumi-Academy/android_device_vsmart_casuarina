@@ -15,3 +15,6 @@
 
 # Custom wcnss_service
 /(vendor|system/vendor)/bin/wcnss_service_prebuilt       u:object_r:wcnss_service_exec:s0
+
+# Files in rootfs
+/avb(/.*)?                                                              u:object_r:avb_file:s0
