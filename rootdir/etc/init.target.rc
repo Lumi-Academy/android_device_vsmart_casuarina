@@ -90,15 +90,6 @@ on post-fs-data
     mkdir /data/vendor/hbtp 0750 system system
     #[Tracychui]remove improve touch hbtp 20200622 end
 
-#Create folder for mm-qcamera-daemon
-    mkdir /data/vendor/camera 0770 camera camera
-
-#start camera server as daemon
-service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
-    class late_start
-    user camera
-    group camera system inet input graphics
-
 on init
     write /dev/stune/foreground/schedtune.sched_boost_no_override 1
     write /dev/stune/top-app/schedtune.sched_boost_no_override 1
@@ -116,7 +107,6 @@ service qfp-daemon /system/vendor/bin/qfp-daemon
 # Allow usb charging to be disabled peristently
 on property:persist.usb.chgdisabled=1
     write /sys/class/power_supply/battery/charging_enabled 0
-
 on property:persist.usb.chgdisabled=0
     write /sys/class/power_supply/battery/charging_enabled 1
 
