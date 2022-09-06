@@ -22,24 +22,24 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 # Inherit some common Lineage stuff
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-# Inherit from FP3 device
-$(call inherit-product, $(LOCAL_PATH)/device.mk)
+# Inherit from casuarina device
+$(call inherit-product, device/vsmart/casuarina/device.mk)
 
 
-PRODUCT_BRAND := Fairphone
-PRODUCT_DEVICE := FP3
-PRODUCT_MANUFACTURER := Fairphone
-PRODUCT_NAME := lineage_FP3
-PRODUCT_MODEL := FP3
+PRODUCT_BRAND := vsmart
+PRODUCT_DEVICE := casuarina
+PRODUCT_MANUFACTURER := vsmart
+PRODUCT_NAME := lineage_casuarina
+PRODUCT_MODEL := Joy 3
 
-PRODUCT_GMS_CLIENTID_BASE := android-uniscope
+PRODUCT_GMS_CLIENTID_BASE := android-vsmart
 
-PRODUCT_SYSTEM_DEVICE := FP3
+PRODUCT_SYSTEM_DEVICE := casuarina
 
 # userdebug
 PRODUCT_BUILD_PROP_OVERRIDES += \
-        TARGET_DEVICE=FP3 \
-        PRIVATE_BUILD_DESC="FP3-user 11 8901.4.A.0013.4-gms-c1b5afb7 release-keys"
+        TARGET_DEVICE=casuarina \
+        PRIVATE_BUILD_DESC="casuarina-user 10 QKQ1.200311.002 V430A_OPN_U_B13_210315 release-keys"
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT := Fairphone/FP3/FP3:11/8901.4.A.0013.4/gms-c1b5afb7:user/release-keys
+BUILD_FINGERPRINT := vsmart/casuarina_open/casuarina:10/QKQ1.200311.002/V430A_OPN_U_B13_210315:user/release-keys

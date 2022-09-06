@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_FP3.mk
+    $(LOCAL_DIR)/lineage_casuarina.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_FP3-user \
-    lineage_FP3-userdebug \
-    lineage_FP3-eng
+    lineage_casuarina-user \
+    lineage_casuarina-userdebug \
+    lineage_casuarina-eng

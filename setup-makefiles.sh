@@ -8,8 +8,8 @@
 set -e
 
 # Required!
-export DEVICE=FP3
-export VENDOR=fairphone
+export DEVICE=casuarina
+export VENDOR=vsmart
 
 export DEVICE_BRINGUP_YEAR=2020
 
@@ -30,7 +30,7 @@ source "${HELPER}"
 setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false
 
 # Copyright headers and guards
-write_headers "FP3"
+write_headers "casuarina"
 
 # The standard common blobs
 write_makefiles "${MY_DIR}/proprietary-files.txt" true
