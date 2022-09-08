@@ -15,7 +15,7 @@
 #
 
 # Vendor blobs
-$(call inherit-product, vendor/fairphone/FP3/FP3-vendor.mk)
+$(call inherit-product, vendor/vsmart/casuarina/casuarina-vendor.mk)
 
 # Installs gsi keys into ramdisk, to boot a GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
@@ -213,6 +213,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
            dalvik.vm.heapminfree=4m \
            dalvik.vm.heapstartsize=16m \
            vendor.vidc.disable.split.mode=1
+
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
 

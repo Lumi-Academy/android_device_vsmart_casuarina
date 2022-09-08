@@ -10,6 +10,9 @@
 # Samsung remosaic algorithm integration
 /(vendor|system/vendor)/bin/remosaic_daemon 	u:object_r:remosaic_daemon_exec:s0
 
+# Files in rootfs
+/avb(/.*)?                                                              u:object_r:avb_file:s0
+
 # Persist
 /persist(/*)?                u:object_r:mnt_vendor_file:s0
 

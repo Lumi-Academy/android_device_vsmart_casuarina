@@ -1,4 +1,4 @@
-#
+	#
 # Copyright (C) 2019-2020 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -103,6 +103,7 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3221225472
 BOARD_CACHEIMAGE_PARTITION_SIZE := 536870912
 BOARD_VENDORIMAGE_PARTITION_SIZE := 811597824
 TARGET_COPY_OUT_VENDOR := vendor
+BOARD_USES_RECOVERY_AS_BOOT := false
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
@@ -206,7 +207,7 @@ USE_SENSOR_MULTI_HAL := true
 TARGET_PER_MGR_ENABLED := true
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/recovery.fstab
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 
 # Vendor Security Patch Level
 VENDOR_SECURITY_PATCH := "2022-06-05"
@@ -229,19 +230,6 @@ BOARD_AVB_RECOVERY_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flag 3
 
-# Disable verity and descriptor checking
-BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --set_hashtree_disabled_flag
-
-# When AVB 2.0 is enabled, dm-verity is enabled differently,
-# below definitions are only required for AVB 1.0
-ifeq ($(BOARD_AVB_ENABLE),false)
-# dm-verity definitions
-    PRODUCT_SUPPORTS_VERITY := true
-    PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/bootdevice/by-name/system
-    PRODUCT_VENDOR_VERITY_PARTITION := /dev/block/bootdevice/by-name/vendor
-    $(call inherit-product, build/target/product/verity.mk)
-endif
-
 # INIT
 # TARGET_INIT_VENDOR_LIB := libinit_msm #Important
 
@@ -256,6 +244,8 @@ BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 BOARD_HOSTAPD_DRIVER := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+WIFI_DRIVER_MODULE_NAME := "wlan"
+WIFI_DRIVER_MODULE_PATH := "vendor/lib/modules/pronto_wlan.ko"
 WIFI_DRIVER_FW_PATH_STA := "sta"
 WIFI_DRIVER_FW_PATH_AP  := "ap"
 WIFI_DRIVER_FW_PATH_P2P := "p2p"
