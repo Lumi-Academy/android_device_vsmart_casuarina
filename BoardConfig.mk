@@ -57,7 +57,7 @@ TARGET_FS_CONFIG_GEN += \
     $(DEVICE_PATH)/configs/config.fs
 
 # Display
-TARGET_SCREEN_DENSITY := 320
+TARGET_SCREEN_DENSITY := 280
 
 # Kernel
 BOARD_KERNEL_BASE        := 0x80000000
