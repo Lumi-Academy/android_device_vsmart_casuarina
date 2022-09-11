@@ -60,26 +60,29 @@ TARGET_FS_CONFIG_GEN += \
 TARGET_SCREEN_DENSITY := 280
 
 # Kernel
-BOARD_KERNEL_BASE        := 0x80000000
-BOARD_KERNEL_PAGESIZE    := 2048
-BOARD_KERNEL_OFFSET      := 0x00008000
-BOARD_KERNEL_TAGS_OFFSET := 0x00000100
-BOARD_RAMDISK_OFFSET     := 0x01000000
+BOARD_KERNEL_BASE           := 0x80000000
+BOARD_KERNEL_PAGESIZE       := 2048
+BOARD_KERNEL_OFFSET         := 0x00008000
+BOARD_KERNEL_TAGS_OFFSET    := 0x00000100
+BOARD_RAMDISK_OFFSET        := 0x01000000
+BOARD_KERNEL_HEADER_VERSION := 1
+
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
+TARGET_PREBUILT_KERNEL  := $(DEVICE_PATH)/prebuilt/Image.gz-dtb
+TARGET_FORCE_PREBUILT_KERNEL := true
+
+BOARD_KERNEL_CMDLINE += console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0 ehci-hcd.park=3
+BOARD_KERNEL_CMDLINE += androidboot.hardware=qcom msm_rtb.filter=0x237 lpm_levels.sleep_disabled=1
+BOARD_KERNEL_CMDLINE += androidboot.bootdevice=7824900.sdhci earlycon=msm_hsl_uart,0x78af000000
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+
+BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_KERNEL_HEADER_VERSION)
+
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_USES_UNCOMPRESSED_KERNEL := false
-TARGET_KERNEL_CONFIG := lineageos_FP3_defconfig
-TARGET_KERNEL_SOURCE := kernel/fairphone/sdm632
-TARGET_USES_UNCOMPRESSED_KERNEL := false
-BOARD_KERNEL_CMDLINE += androidboot.hardware=qcom msm_rtb.filter=0x237
-BOARD_KERNEL_CMDLINE += ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci
-BOARD_KERNEL_CMDLINE += androidboot.usbconfigfs=true loop.max_part=7
-BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
-BOARD_KERNEL_SEPARATED_DTBO := true
-TARGET_KERNEL_VERSION := 4.9
-TARGET_KERNEL_ADDITIONAL_FLAGS := \
-    DTC=$(shell pwd)/prebuilts/misc/$(HOST_OS)-x86/dtc/dtc \
-    MKDTIMG=$(shell pwd)/prebuilts/misc/$(HOST_OS)-x86/libufdt/mkdtimg
+TARGET_KERNEL_CONFIG  := CASUARINA_OPEN_Q_defconfig
+TARGET_KERNEL_HEADERS := kernel/vsmart/sdm632
+TARGET_KERNEL_SOURCE  := kernel/vsmart/sdm632
 
 # Declare boot header
 BOARD_BOOT_HEADER_VERSION := 1
