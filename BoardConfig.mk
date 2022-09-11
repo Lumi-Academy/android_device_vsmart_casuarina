@@ -35,6 +35,7 @@ TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a53
 TARGET_CPU_CORTEX_A53 := true
 
 # Broken Flags
+BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 # QCOM hardware
@@ -250,8 +251,6 @@ WIFI_DRIVER_FW_PATH_STA := "sta"
 WIFI_DRIVER_FW_PATH_AP  := "ap"
 WIFI_DRIVER_FW_PATH_P2P := "p2p"
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
-PRODUCT_VENDOR_MOVE_ENABLED := true
-TARGET_USES_QCOM_WCNSS_QMI := true
 
 # inherit from the proprietary version
--include vendor/fairphone/FP3/BoardConfigVendor.mk
+-include vendor/vsmart/casuarina/BoardConfigVendor.mk
