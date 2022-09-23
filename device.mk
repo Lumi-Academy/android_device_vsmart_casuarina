@@ -129,7 +129,7 @@ PRODUCT_PACKAGES += \
     ueventd.qcom.rc \
     vold.fstab \
     init.time_daemon.rc \
-    elan_device.rc
+    init.fpsensor.rc
 
 PRODUCT_PACKAGES += \
     init.class_main.sh \
@@ -353,6 +353,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1 \
     android.hardware.biometrics.fingerprint@2.1-service
+
+PRODUCT_PACKAGES += \
+    LumiOverlay
 
 # FBE support
 PRODUCT_COPY_FILES += \
