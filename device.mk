@@ -606,6 +606,10 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf
 
+# Wifi (Temporary)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/wifi/libwifi-hal-hoanglong.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libwifi-hal-hoanglong.so
+
 # Wifi
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
