@@ -214,7 +214,7 @@ TARGET_PER_MGR_ENABLED := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 
 # Vendor Security Patch Level
-VENDOR_SECURITY_PATCH := "2022-06-05"
+VENDOR_SECURITY_PATCH := "2022-08-05"
 
 # SELinux
 include device/qcom/sepolicy-legacy-um/SEPolicy.mk
