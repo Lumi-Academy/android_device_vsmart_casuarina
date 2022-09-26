@@ -1,8 +1,18 @@
-allow hal_fingerprint_default elanfp_device:chr_file rw_file_perms;
-allow hal_fingerprint_default tee_device:chr_file rw_file_perms;
-allow hal_fingerprint_default firmware_file:dir { getattr search open read lock ioctl };
-allow hal_fingerprint_default firmware_file:file { getattr open read lock ioctl };
+# fpsensor
+allow hal_fingerprint_default {
+  fpsensor_fp_device
+  uhid_device
+  tee_device
+}: chr_file { ioctl read write open };
 
-#[Kent][fingerprint][170251503][Begin]porting fingerprint sensor
-set_prop(hal_fingerprint_default, fps_vendor_prop)
-#[Kent][fingerprint][17062701][end]add vendor property
+allow hal_fingerprint_default {
+  fuse
+  mnt_user_file
+}: dir search;
+
+allow hal_fingerprint_default {
+  mnt_user_file
+  storage_file
+}: lnk_file read;
+
+allow hal_fingerprint_default fp_ext_svc2_service:hwservice_manager add;

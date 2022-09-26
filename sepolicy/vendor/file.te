@@ -1,4 +1,2 @@
-type elanfp_data, file_type, data_file_type;
-
 # Avb
 type avb_file, file_type;
