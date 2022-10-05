@@ -36,7 +36,6 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.effect@7.0 \
     android.hardware.audio.effect@7.0-impl:32 \
     android.hardware.audio.service \
-    android.hardware.soundtrigger@2.1-impl \
     audio.a2dp.default \
     audio.primary.msm8953 \
     audio.r_submix.default \
