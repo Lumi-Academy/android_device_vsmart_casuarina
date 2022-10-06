@@ -115,10 +115,6 @@ PRODUCT_PACKAGES += \
     libgui_vendor \
     libstdc++.vendor
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.camera.isp.clock.optmz=0 \
-    persist.vendor.camera.lib2d.rotation=on
-
 # Configstore
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.capabilityconfigstore@1.0 \
@@ -158,51 +154,9 @@ PRODUCT_PACKAGES += \
     vendor.display.config@1.0.vendor \
     vendor.display.config@2.0.vendor
 
-# Disable skip validate
-PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.display.disable_skip_validate=1
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.gralloc.disable_ahardware_buffer=1
-
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.4-service.clearkey
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    drm.service.enabled=true
-
-#
-# system prop for opengles version
-#
-# 196608 is decimal for 0x30000 to report major/minor versions as 3/0
-# 196609 is decimal for 0x30001 to report major/minor versions as 3/1
-# 196610 is decimal for 0x30002 to report major/minor versions as 3/2
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.opengles.version=196610
-
-PRODUCT_PROPERTY_OVERRIDES += ro.hardware.vulkan=adreno
-PRODUCT_PROPERTY_OVERRIDES += ro.hardware.egl=adreno
-
-# Encryption
-PRODUCT_PROPERTY_OVERRIDES += ro.crypto.allow_encrypt_override=true
-PRODUCT_PROPERTY_OVERRIDES += ro.crypto.volume.filenames_mode=aes-256-cts
-
-# FRP
-PRODUCT_PROPERTY_OVERRIDES += ro.frp.pst=/dev/block/bootdevice/by-name/config
-
-# Keystore
-PRODUCT_PROPERTY_OVERRIDES += ro.hardware.keystore_desede=true
-
-# OEM Unlock reporting
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.oem_unlock_supported=1
-
-# IPV4
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.data.profile_update=true
-
-PRODUCT_PROPERTY_OVERRIDES += ro.telephony.iwlan_operation_mode=legacy
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -265,11 +219,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml \
     $(LOCAL_PATH)/configs/perf/perf-profile0.conf:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perf-profile0.conf
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.qcomsysd.enabled=1 \
-    ro.vendor.extension_library=libqti-perfd-client.so \
-    sys.vendor.shutdown.waittime=500
 
 # Enable vndk-sp Libraries
 PRODUCT_PACKAGES += \
@@ -427,8 +376,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libstagefright_ccodec
 
-PRODUCT_PROPERTY_OVERRIDES += debug.stagefright.omx_default_rank=0
-
 # OMX
 PRODUCT_PACKAGES += \
     libavservices_minijail \
@@ -486,24 +433,6 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.config@1.3.vendor \
     android.hardware.radio.deprecated@1.0.vendor
 
-# RIL - Properties
-PRODUCT_PROPERTY_OVERRIDES += vendor.rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
-
-# RIL - Disable advanced network scanning
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.radio.enableadvancedscan=false
-
-# RIL - Enable Dual SIM by default
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.radio.multisim.config=dsds
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.radio.apm_sim_not_pwdn=1 \
-    persist.vendor.radio.sib16_support=1 \
-    persist.vendor.radio.custom_ecc=1 \
-    persist.vendor.radio.rat_on=combine \
-    persist.vendor.radio.procedure_bytes=SKIP
-
 # Secure Element
 PRODUCT_PACKAGES += \
     SecureElement \
@@ -530,10 +459,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
 	vendor.qti.hardware.servicetracker@1.2.vendor
 
-# SoC
-PRODUCT_VENDOR_PROPERTIES += ro.soc.manufacturer=QTI
-PRODUCT_VENDOR_PROPERTIES += ro.soc.model=SDM450
-
 # System helper
 PRODUCT_PACKAGES += \
 	vendor.qti.hardware.systemhelper@1.0
@@ -548,12 +473,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     telephony-ext
-
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.vendor.qti.va_aosp.support=1
-
-PRODUCT_ODM_PROPERTIES += \
-    ro.vendor.qti.va_odm.support=1
 
 # Trust HAL
 PRODUCT_PACKAGES += \

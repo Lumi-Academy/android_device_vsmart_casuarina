@@ -148,6 +148,12 @@ ril.subscription.types=NV,RUIM
 rild.libargs=-d /dev/smd0
 rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
 
+# QC framework value-adds
+ro.vendor.qti.va_aosp.support=1
+
+# OEM Unlock
+ro.oem_unlock_supported=1
+
 # Set network mode to (T/L/G/W/1X/EVDO, T/L/G/W/1X/EVDO) for 7+7 mode device on DSDS mode
 ro.telephony.default_network=20,20
 
