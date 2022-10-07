@@ -10,7 +10,7 @@ drm.service.enabled=true
 media.mediadrmservice.enable=true
 
 # FRP
-ro.frp.pst=/dev/block/bootdevice/by-name/frp
+ro.frp.pst=/dev/block/bootdevice/by-name/config
 
 # Graphics
 ro.hardware.vulkan=adreno
