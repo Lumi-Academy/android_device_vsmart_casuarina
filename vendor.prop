@@ -23,6 +23,8 @@ debug.hwui.renderer=vulkan
 debug.renderengine.backend=threaded
 persist.vendor.qcomsysd.enabled=1
 sys.vendor.shutdown.waittime=500
+persist.sys.fuse.transcode_user_control=true
+persist.sys.fuse.transcode_enabled=false
 
 # Media
 vidc.enc.dcvs.extra-buff-count=2
