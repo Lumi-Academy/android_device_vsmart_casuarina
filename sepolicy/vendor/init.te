@@ -1,4 +1,4 @@
-allow init vendor_file:file execute;
+allow init vendor_file:file { execute mounton };
 
 # fpsensor
 allow init fpsensor_fp_device:chr_file write;
