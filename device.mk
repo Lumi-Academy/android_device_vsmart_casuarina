@@ -279,12 +279,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/hostapd/hostapd.deny:$(TARGET_COPY_OUT_VENDOR)/etc/hostapd/hostapd.deny \
     $(LOCAL_PATH)/configs/hostapd/hostapd_default.conf:$(TARGET_COPY_OUT_VENDOR)/etc/hostapd/hostapd_default.conf
 
-# HW crypto
-PRODUCT_PACKAGES += \
-    vendor.qti.hardware.cryptfshw@1.0-service-qti.qsee \
-    vendor.qti.hardware.cryptfshw@1.0 \
-    vendor.qti.hardware.cryptfshw@1.0.vendor
-
 # Init
 PRODUCT_PACKAGES += \
     fstab.qcom \
