@@ -200,13 +200,6 @@ PRODUCT_COPY_FILES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1 \
-    android.hardware.biometrics.fingerprint@2.1-service
-
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/biometrics/,$(TARGET_COPY_OUT_VENDOR)/bin/hw)
-
-PRODUCT_PACKAGES += \
     LumiOverlay
 
 # FBE support
