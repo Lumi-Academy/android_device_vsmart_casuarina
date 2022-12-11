@@ -39,4 +39,7 @@
 
     <!-- Enable WPA2 to WPA3 auto-upgrade -->
     <bool translatable="false" name="config_wifiSaeUpgradeEnabled">false</bool>
+
+    <!-- Do not translate. Default access point SSID used for tethering -->
+    <string translatable="false" name="wifi_tether_configure_ssid_default">Vsmart Joy 3</string>
 </resources>
