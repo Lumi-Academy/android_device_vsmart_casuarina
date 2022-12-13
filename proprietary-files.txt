@@ -633,7 +633,6 @@ vendor/bin/qseecomd
 vendor/bin/qti
 vendor/bin/qtigetprop
 vendor/bin/qtisetprop
-vendor/bin/remosaic_daemon
 vendor/bin/rmt_storage
 vendor/bin/secure_ui_sample_client
 vendor/bin/sensors.qti
@@ -2759,7 +2758,6 @@ vendor/lib/libqti-utils.so
 vendor/lib/libqtigef.so
 vendor/lib/libqtikeymaster4.so
 vendor/lib/librcc.so
-vendor/lib/libremosaic_daemon.so
 vendor/lib/libril-qc-hal-qmi.so
 vendor/lib/libril-qc-logger.so
 vendor/lib/libril-qc-ltedirectdisc.so
@@ -3161,8 +3159,6 @@ vendor/lib64/libqti-utils.so
 vendor/lib64/libqtigef.so
 vendor/lib64/libqtikeymaster4.so
 vendor/lib64/librcc.so
-vendor/lib64/libremosaic_daemon.so
-vendor/lib64/libremosaiclib.so
 vendor/lib64/libril-qc-hal-qmi.so
 vendor/lib64/libril-qc-logger.so
 vendor/lib64/libril-qc-ltedirectdisc.so
