@@ -249,6 +249,7 @@ on post-fs-data
 
     # Lumi
     mount none /vendor/lib64/libwifi-hal-hoanglong.so /vendor/lib64/libwifi-hal.so bind
+    mount none /vendor/bin/hw/lumi.biometrics@2.1-service /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service bind
 
     # Create directory used for dump collection
     mkdir /data/vendor/ssrdump 0770 root system
