@@ -91,8 +91,6 @@ BOARD_RAMDISK_OFFSET        := 0x01000000
 BOARD_KERNEL_HEADER_VERSION := 1
 
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
-TARGET_PREBUILT_KERNEL  := $(DEVICE_PATH)/prebuilt/Image.gz-dtb
-TARGET_FORCE_PREBUILT_KERNEL := true
 
 BOARD_KERNEL_CMDLINE += console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0 ehci-hcd.park=3
 BOARD_KERNEL_CMDLINE += androidboot.hardware=qcom msm_rtb.filter=0x237 lpm_levels.sleep_disabled=1
@@ -102,9 +100,11 @@ BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_BOOT_HEADER_VERSION := 1
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_KERNEL_HEADER_VERSION)
 
+TARGET_KERNEL_VERSION := 4.19
+
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_CONFIG  := lumi_8953_defconfig
+TARGET_KERNEL_CONFIG  := lineage_casuarina_419-defconfig
 TARGET_KERNEL_HEADERS := kernel/vsmart/casuarina
 TARGET_KERNEL_SOURCE  := kernel/vsmart/casuarina
 
