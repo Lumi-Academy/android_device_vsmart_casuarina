@@ -103,7 +103,7 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_KERNEL_HEADER_VERSION)
 
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_CONFIG  := lumi_8953_defconfig
+TARGET_KERNEL_CONFIG  := lineage_casuarina_defconfig
 TARGET_KERNEL_HEADERS := kernel/vsmart/casuarina
 TARGET_KERNEL_SOURCE  := kernel/vsmart/casuarina
 
