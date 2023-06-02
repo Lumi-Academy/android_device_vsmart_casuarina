@@ -282,7 +282,6 @@ PRODUCT_COPY_FILES += \
 
 # Init
 PRODUCT_PACKAGES += \
-    fstab.qcom \
     init.qcom.rc \
     init.target.rc \
     init.recovery.qcom.rc \
@@ -293,6 +292,13 @@ PRODUCT_PACKAGES += \
     vold.fstab \
     init.time_daemon.rc \
     init.fpsensor.rc
+
+ifeq ($(PRODUCT_USE_DYNAMIC_PARTITIONS),true)
+PRODUCT_COPY_FILES += $(DEVICE_PATH)/rootdir/etc/fstab_dynamic.qcom:$(TARGET_OUT_VENDOR_ETC)
+else
+PRODUCT_PACKAGES += \
+    fstab.qcom
+endif
 
 PRODUCT_PACKAGES += \
     init.class_main.sh \
