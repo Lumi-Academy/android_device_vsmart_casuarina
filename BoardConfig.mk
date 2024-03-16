@@ -14,12 +14,10 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/fairphone/FP3
-
+DEVICE_PATH := device/vsmart/vin8953
 
 # Switch to dedicated msm8953 HAL
 TARGET_ENFORCES_QSSI := true
-
 
 # A/B updater
 AB_OTA_UPDATER := true
@@ -29,7 +27,6 @@ AB_OTA_PARTITIONS += \
     system \
     vbmeta \
     vendor
-
 
 # Architecture
 TARGET_ARCH := arm64
@@ -47,10 +44,8 @@ TARGET_2ND_CPU_VARIANT := generic
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a53
 TARGET_CPU_CORTEX_A53 := true
 
-
 # Assertions
-TARGET_OTA_ASSERT_DEVICE := FP3
-
+TARGET_OTA_ASSERT_DEVICE := vin8953,V430A,V420A,V420A_open,pine,pine_open,casuarina,casuarina_open
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
@@ -107,32 +102,25 @@ DTS_CODEC_M_ := false
 MM_AUDIO_ENABLED_SAFX := true
 USE_CUSTOM_AUDIO_POLICY := 1
 
-
 # Bluetooth
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 BOARD_HAVE_BLUETOOTH_QCOM := true
 
-
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := FP3
+TARGET_BOOTLOADER_BOARD_NAME := MSM8953
 TARGET_NO_BOOTLOADER := false
-
 
 # Broken Flags
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
-
 # Camera
 USE_CAMERA_STUB := true
-
 
 # Display
 TARGET_SCREEN_DENSITY := 420
 
-
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true
-
 
 # Filesystem and Partitions
 BOARD_PERSISTIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -154,11 +142,9 @@ BOARD_VENDORIMAGE_PARTITION_SIZE := 1073741824
 TARGET_COPY_OUT_VENDOR := vendor
 TARGET_NO_RECOVERY := true
 
-
 # Filesystem config
 TARGET_FS_CONFIG_GEN += \
     $(DEVICE_PATH)/configs/config.fs
-
 
 # GPS
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := default # from gps/gps_vendor_board.mk
@@ -179,12 +165,10 @@ TARGET_USES_HWC2 := true
 TARGET_USES_ION := true
 TARGET_USES_MEDIA_EXTENSIONS := true
 
-
 # HIDL
 DEVICE_FRAMEWORK_MANIFEST_FILE := $(DEVICE_PATH)/framework_manifest.xml
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
-
 
 # Kernel
 BOARD_KERNEL_BASE        := 0x80000000
@@ -201,35 +185,29 @@ TARGET_KERNEL_ADDITIONAL_FLAGS := \
     DTC=$(shell pwd)/prebuilts/misc/$(HOST_OS)-x86/dtc/dtc \
     MKDTIMG=$(shell pwd)/prebuilts/misc/$(HOST_OS)-x86/libufdt/mkdtimg
 TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_CONFIG := lineageos_FP3_defconfig
+TARGET_KERNEL_CONFIG := vin8953_defconfig
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_SOURCE := kernel/fairphone/sdm632
+TARGET_KERNEL_SOURCE := kernel/vsmart/vin8953
 TARGET_KERNEL_VERSION := 4.9
 TARGET_KERNEL_LLVM_BINUTILS := false
 TARGET_KERNEL_CLANG_VERSION := r416183b
 TARGET_KERNEL_CLANG_PATH := $(abspath .)/prebuilts/clang/kernel/$(HOST_PREBUILT_TAG)/clang-$(TARGET_KERNEL_CLANG_VERSION)
-TARGET_USES_UNCOMPRESSED_KERNEL := false
 
 # Declare boot header
 BOARD_BOOT_HEADER_VERSION := 1
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 
-
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
-
 
 # Mount point
 TARGET_MOUNT_POINTS_SYMLINKS := false
 
-
 # Platform - UM_3_18_FAMILY
 TARGET_BOARD_PLATFORM := msm8953
 
-
 # Power
 TARGET_USES_INTERACTION_BOOST := true
-
 
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
@@ -237,24 +215,19 @@ BOARD_USES_QCOM_HARDWARE := true
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/recovery.fstab
 
-
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true
 
-
 # Enable sensor multi HAL
 USE_SENSOR_MULTI_HAL := true
-
 
 # SELinux
 include device/qcom/sepolicy-legacy-um/SEPolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 PRODUCT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
 
-
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
-
 
 # Treble
 BOARD_AVB_ENABLE := true
@@ -267,10 +240,8 @@ BOARD_AVB_SYSTEM_ROLLBACK_INDEX_LOCATION := 2
 # Disable verity and descriptor checking
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --set_hashtree_disabled_flag
 
-
 # Vendor Security Patch Level
 VENDOR_SECURITY_PATCH := "2023-12-05"
-
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
@@ -288,4 +259,4 @@ WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # inherit from the proprietary version
--include vendor/fairphone/FP3/BoardConfigVendor.mk
+-include vendor/vsmart/vin8953/BoardConfigVendor.mk

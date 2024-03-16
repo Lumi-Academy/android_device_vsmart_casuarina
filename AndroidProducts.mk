@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_FP3.mk
+    $(LOCAL_DIR)/lineage_vin8953.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_FP3-user \
-    lineage_FP3-userdebug \
-    lineage_FP3-eng
+    lineage_vin8953-user \
+    lineage_vin8953-userdebug \
+    lineage_vin8953-eng

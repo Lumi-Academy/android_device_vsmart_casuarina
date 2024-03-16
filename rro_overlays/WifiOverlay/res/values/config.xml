@@ -47,5 +47,5 @@
     <integer translatable="false" name="config_wifiVerboseLoggingAlwaysOnLevel">1</integer>
 
     <!-- Do not translate. Default access point SSID used for tethering -->
-    <string translatable="false" name="wifi_tether_configure_ssid_default">Fairphone 3 AP</string>
+    <string translatable="false" name="wifi_tether_configure_ssid_default">Vsmart Joy 3</string>
 </resources>

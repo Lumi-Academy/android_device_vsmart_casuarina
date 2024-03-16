@@ -8,8 +8,8 @@
 set -e
 
 # Required!
-export DEVICE=FP3
-export VENDOR=fairphone
+export DEVICE=vin8953
+export VENDOR=vsmart
 
 export DEVICE_BRINGUP_YEAR=2020
 
