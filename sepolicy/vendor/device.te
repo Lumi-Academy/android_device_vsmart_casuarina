@@ -1,2 +1,2 @@
-# elan finger print dev
-type elanfp_device, dev_type;
+# fingerprint dev
+type fpsensor_fp_device, dev_type;
