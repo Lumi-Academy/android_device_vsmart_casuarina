@@ -309,10 +309,10 @@ PRODUCT_PACKAGES += \
 
 #INIT
 PRODUCT_PACKAGES += \
-    elan_device.rc \
     fstab.qcom \
     init.class_late.sh \
     init.class_main.sh \
+    init.fpsensor.rc \
     init.mdm.sh \
     init.msm.usb.configfs.rc \
     init.qcom.class_core.sh \
